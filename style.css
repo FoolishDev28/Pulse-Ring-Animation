@@ -1,0 +1,50 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	background: #181818;
+}
+
+.container{
+	width: 150px;
+	height: 150px;
+}
+
+.outer-ring{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	border: 5px  solid skyblue;
+}
+
+.inner-ring{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: calc(100% - 2px);
+	height: calc(100% - 3px);
+	border-radius: 100%;
+	border: 5px solid blue;
+	animation: breathe 4s linear infinite;
+}
+
+@keyframes breathe{
+	0%{
+		box-shadow: 0;
+	}
+	25%{
+		box-shadow: inset 0 0 10px 5px blue;
+	}
+	50%{
+		box-shadow: inset 0 0 30px 5px blue;
+	}
+	75%{
+		box-shadow: inset 0 0 10px 5px blue;
+	}
+	100%{
+		box-shadow: inset 0;
+	}
+}
